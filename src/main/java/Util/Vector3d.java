@@ -1,8 +1,8 @@
 package Util;
 
 public class Vector3d {
-	
-	private double x,y,z;
+
+	private double x, y, z;
 
 	public Vector3d(double x, double y, double z) {
 		this.x = x;
@@ -34,9 +34,14 @@ public class Vector3d {
 		this.z = z;
 	}
 	
-	
-	
-	
-	
+	public double lenght(){
+		return Math.sqrt((x*x)+(y*y)+(z*z));
+		
+	}
+
+	@Override
+	public String toString() {
+		return ("x=" + x + " y=" + y + "z=" + z);
+	}
 
 }
