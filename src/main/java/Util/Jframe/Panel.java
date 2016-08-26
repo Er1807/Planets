@@ -8,11 +8,11 @@ import javax.swing.JPanel;
 import Util.Planet;
 
 @SuppressWarnings("serial")
-public class PongPanel extends JPanel {
-	private Pong game;
+public class Panel extends JPanel {
+	
 	private Ball[] balls;
 
-	public PongPanel(Planet[] planets) {
+	public Panel(Planet[] planets) {
 		setBackground(Color.WHITE);
 		balls = new Ball[planets.length];
 		for (int i = 0; i < planets.length; i++) {
