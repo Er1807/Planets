@@ -44,4 +44,10 @@ public class Vector3d {
 		return ("x=" + x + " y=" + y + "z=" + z);
 	}
 
+	public void add(double i, double j, double k) {
+		x+=i;
+		y+=j;
+		z+=k;
+	}
+
 }

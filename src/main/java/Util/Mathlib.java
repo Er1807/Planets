@@ -4,7 +4,7 @@ public class Mathlib {
 	private Mathlib() {
 	};
 
-	private static final double G = 0.66741;
+	private static final double G = 6.6741;
 
 	public static double g(double m, double r) {
 
@@ -38,7 +38,6 @@ public class Mathlib {
 
 		for (int i = 0; i < gvalues.length; i++) {
 			double pecentg = gvalues[i] / gtotal;
-			System.out.println(pecentg);
 			x += (pos[i].getX() * pecentg);
 			y += (pos[i].getY() * pecentg);
 			z += (pos[i].getZ() * pecentg);
@@ -68,9 +67,11 @@ public class Mathlib {
 
 	}
 	
-	public static Vector3d calculatenewdirectionandspeed(double cforce,double gtotal, Vector3d poscentral, Vector3d owndir, Vector3d ownpos){
-		
-		double total = cforce + gtotal;
+	public static Vector3d calculatenewdirectionandspeed(Vector3d[] pos, double[] mass,Vector3d owndir, Vector3d ownpos,double ownmass){
+		Vector3d poscentral = calculatepoint(pos, mass, ownpos);
+		double cforce = centripetalforce(ownmass, owndir, pythagorean_quadruple(poscentral,ownpos));
+		double gtotal = calculategtotal(pos, mass, ownpos);
+		double total = cforce+gtotal;
 		double pcforce = cforce/total;
 		double pgtotal = gtotal/total;
 		
@@ -78,7 +79,7 @@ public class Mathlib {
 			return owndir;
 		}else {
 			Vector3d line = new Vector3d(poscentral.getX()-ownpos.getX(), poscentral.getY()-ownpos.getY(),poscentral.getZ()-ownpos.getZ());
-			return new Vector3d(owndir.getX()+line.getX()*pgtotal+line.getX()*-pcforce, owndir.getY()+line.getY()*pgtotal+line.getY()*-pcforce, owndir.getZ()+line.getZ()*pgtotal+line.getZ()*-pcforce);
+			return new Vector3d(owndir.getX()+line.getX()*pgtotal+line.getX()*-0, owndir.getY()+line.getY()*pgtotal+line.getY()*-0, owndir.getZ()+line.getZ()*pgtotal+line.getZ()*-0);
 		}
 	}
 	
