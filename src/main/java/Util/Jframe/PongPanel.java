@@ -5,45 +5,38 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
+import Util.Planet;
+
 @SuppressWarnings("serial")
 public class PongPanel extends JPanel {
 	private Pong game;
-	private Ball ball3;
-	private Ball ball2;
-	private Ball ball;
+	private Ball[] balls;
 
-	public PongPanel(Pong game) {
+	public PongPanel(Planet[] planets) {
 		setBackground(Color.WHITE);
-		ball = new Ball(game);
-		ball2 = new Ball(game);
-		ball3 = new Ball(game);
-		
+		balls = new Ball[planets.length];
+		for (int i = 0; i < planets.length; i++) {
+			balls[i]=new Ball();
+			balls[i].setP(planets[i]);
+		}
 	}
 
 	public void update(){
-		ball.update();
-		ball2.update();
-		ball3.update();
+		for (int i = 0; i < balls.length; i++) {
+			balls[i].update();
+		}
+		this.repaint();
 	}
+	
+	
 	
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		ball.paint(g);
-		ball2.paint(g);
-		ball3.paint(g);
-
+		for (int i = 0; i < balls.length; i++) {
+			balls[i].paint(g);
+		}
 	}
 
-	public Ball getBall() {
-		return ball;
-	}
-
-	public Ball getBall2() {
-		return ball2;
-	}
-
-	public Ball getBall3() {
-		return ball3;
-	}
+	
 }

@@ -6,7 +6,7 @@ import Util.Planet;
 
 public class Ball {
     private static final int ballWIDTH = 10, ballHEIGHT = 10;
-    private Pong game;
+   
     private int x, y; 
     
     private Planet p;
@@ -15,10 +15,8 @@ public class Ball {
     //	this.mod = mod;
     //}
     
-    public Ball(Pong game){
-        this.game = game;
-        x = game.getWidth() / 2;
-        y = game.getHeight() / 2;
+    public Ball(){
+       
     }
     
     public void update(){
