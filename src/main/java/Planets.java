@@ -3,7 +3,7 @@ import java.util.Random;
 import Util.Mathlib;
 import Util.Planet;
 import Util.Vector3d;
-import Util.Jframe.Pong;
+import Util.Jframe.Jhandler;
 
 public class Planets {
 
@@ -20,7 +20,7 @@ public class Planets {
 		for (int i = 0; i < planets.length; i++) {
 			planets[i]=new Planet(new Vector3d(r.nextInt(700), r.nextInt(700), 0), new Vector3d(r.nextDouble()*5, r.nextDouble()*5, 0), r.nextDouble()*1000+5);
 		}
-		Pong p = new Pong(planets);
+		Jhandler p = new Jhandler(planets);
 		
 		p.getPanel().update();
 		
