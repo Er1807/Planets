@@ -13,7 +13,7 @@ public class Pong extends JFrame{
     
     public Pong(Planet[] p){
         setSize(gameWIDTH, gameHEIGHT);
-        setTitle("Ping Pong");
+        setTitle("Galaxy Sim.");
         setBackground(Color.WHITE);
         setResizable(false);
         setVisible(true);
