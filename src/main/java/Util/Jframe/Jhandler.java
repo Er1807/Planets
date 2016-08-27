@@ -13,7 +13,7 @@ public class Jhandler extends JFrame{
     
     public Jhandler(Planet[] p){
         setSize(gameWIDTH, gameHEIGHT);
-        setTitle("Ping Pong");
+        setTitle("Galaxy Sim");
         setBackground(Color.WHITE);
         setResizable(false);
         setVisible(true);
